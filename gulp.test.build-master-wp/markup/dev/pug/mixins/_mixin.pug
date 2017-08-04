@@ -34,7 +34,6 @@ mixin retina(obj)
 		source(srcset='images/large-'+obj.imgName+'.jpg, images/large-'+obj.imgName+'-2x.jpg 2x, images/large-'+obj.imgName+'-3x.jpg 3x')
 		img(src='images/large-'+obj.imgName+'.jpg', alt= obj.alt || "image description")
 
-
 //-
 	-for (var i = 0; i <= 20; i++)
 		tr
@@ -61,7 +60,6 @@ mixin tabsetList(arr)
 	-for (var i = 1; i <= 18; i++)
 		li: a(href='#'): img(src='images/client-0'+i+'.png', alt='image description')
 
-
 //- +accordion({
 //-   opener: 'Is Agent &amp; Heroes a reputable company to work with?',
 //-   contentSlide: 'It .'
@@ -71,3 +69,15 @@ mixin accordion(obj)
 	.slide
 		.holder
 			p= obj.contentSlide
+
+//- +imgMask({
+//- 	idSvgMask: 'svgmask'
+//- 	mask: 'mask-01.png',
+//- 	imgName: 'img-name',
+//- })
+mixin imgMask(obj)
+	svg(width='100%', height='100%', baseprofile='full', version='1.2')
+		defs
+			mask.mask(id=''+obj.idSvgMask, maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse', transform='scale(1)')
+				image(width='100%', height='100%', xlink:href='images/'+obj.mask)
+		image#the-mask(mask='url(#'+obj.idSvgMask+')', width='100%', height='100%', y='0', x='0', xlink:href='images/'+obj.imgName)

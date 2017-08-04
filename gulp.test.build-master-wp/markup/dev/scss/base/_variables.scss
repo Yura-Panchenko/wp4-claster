@@ -11,8 +11,6 @@ $base-font-sans-serif:        'Arial', 'Helvetica Neue', 'Helvetica', sans-serif
 $base-font-serif:             'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 $base-font:                   $base-font-sans-serif;
 
-
-
 // Body
 $base-text-color:             $black !default;
 $base-background-color:       $white !default;
@@ -26,6 +24,15 @@ $base-min-width:              320px;
 
 $max-width-center-container:  1200px;
 $padding-container:           0 15px;
+
+// font weight
+$thin:                        100;
+$light:                       300;
+$normal:                      400;
+$medium:                      500;
+$semibold:                    600;
+$bold:                        700;
+$black-font:                  800;
 
 // default margins
 $vertical-rhythm:             $font-size-base + 4;
@@ -93,6 +100,7 @@ $input-padding:                     $btn-padding !default; // padding for forms 
 $input-border:                      1px solid $black !default; // border for forms elements
 $input-border-radius:               0 !default; // border radius for forms elements
 $input-height:                      $font-size-base + 14px; // height for forms elements
+$input-font-family:                 $base-font;
 //submit
 $submit-background:                 $btn-background;
 $submit-color:                      $btn-color;
@@ -111,6 +119,7 @@ $placeholder-color:                 $gray !default;
 // select
 $select-height:                     $input-height;
 $select-border:                     $input-border;
+$select-border-radius:              $input-border-radius;
 $select-padding:                    $input-padding;
 $select-font-size:                  $input-font-size;
 $select-line-height:                $input-line-height;

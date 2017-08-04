@@ -16,13 +16,13 @@ input[type='password'],
 textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-  border-radius: $input-border-radius;
-  box-sizing: border-box;
-  border: $input-border;
   padding: $input-padding;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  font-family: $base-font;
+  font-family: $input-font-family;
+  box-sizing: border-box;
+  border: $input-border;
+  border-radius: $input-border-radius;
 
   &:not(textarea) {
     height: $input-height;
@@ -49,26 +49,6 @@ textarea {
   vertical-align: top;
 }
 
-select {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: $input-border-radius;
-  box-sizing: border-box;
-  height: $select-height;
-  border: $select-border;
-  padding: $select-padding;
-  font-size: $select-font-size;
-  line-height: $select-line-height;
-
-  &:focus {
-    outline: none;
-  }
-
-  #sidebar & {
-    width: 100%;
-  }
-}
-
 button,
 input[type='button'],
 input[type='reset'],
@@ -77,19 +57,54 @@ input[type='submit'] {
   @include animate(background);
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-  border-radius: $input-border-radius;
-  cursor: pointer;
-  background: $submit-background;
+  height: $submit-height;
+  padding: $submit-padding;
+  font-size: $submit-font-size;
+  line-height: $submit-line-height;
   color: $submit-color;
-  border: $btn-border;
   outline: none;
-  height: $input-height;
-  padding: $input-padding;
-  font-size: $input-font-size;
-  line-height: $input-line-height;
+  cursor: pointer;
+  border: $submit-border;
+  border-radius: $input-border-radius;
+  background: $submit-background;
 
   &:hover {
     background: $submit-hover-background;
     color: $submit-hover-color;
+  }
+}
+
+.select-style {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+
+  background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+}
+
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  // -webkit-appearance: none;
+  // appearance: none;
+  height: $select-height;
+  width: 100%;
+  padding: $select-padding;
+  font-size: $select-font-size;
+  line-height: $select-line-height;
+  box-sizing: border-box;
+  border: $select-border;
+  border-radius: $select-border-radius;
+
+  &:focus {
+    outline: none;
+  }
+
+  #sidebar & {
+    width: 100%;
   }
 }
