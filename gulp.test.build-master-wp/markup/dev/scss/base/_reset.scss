@@ -39,6 +39,7 @@ body {
 
   @include media('≥tablet') {
     font-size: $font-size-base-lagre;
+    line-height: $line-height-base-lagre;
   }
 }
 
