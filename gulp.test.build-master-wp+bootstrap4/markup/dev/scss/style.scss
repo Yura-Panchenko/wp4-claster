@@ -16,7 +16,7 @@ $breakpoints: (
   xs-phone: 320px,
   phone: 480px,
   tablet: 768px,
-  desktop: 992px,
+  desktop: 1024px,
   widescreen: 1300px
 );
 
@@ -34,26 +34,20 @@ $media-expressions: (
 // ligatured operators ≥ ≤
 
 @import 'vendors/include-media';
+@import 'vendors/unit'; // rem-calc(number in px)
 // @import 'vendors/gravity-defoult/browsers.min';
 // @import 'vendors/gravity-defoult/formreset.min';
 // @import 'vendors/gravity-defoult/formsmain.min';
 // @import 'vendors/gravity-defoult/readyclass.min';
 
 @import 'base/variables';
-@import 'base/functions';
 @import 'base/mixins';
 @import 'base/helpers';
-@import 'base/reset';
-@import 'base/cms-reset';
-@import 'base/forms';
 @import 'base/wp-reset';
-@import 'base/typography';
-
-@import 'components/buttons';
-// @import 'components/custom-radio-checkbox';
-// @import 'components/custom-select';
-// @import 'components/gravity-form-custom';
 
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
+
+//@import 'components/breadcrumb';
+//@import 'components/gravity-form-custom';
