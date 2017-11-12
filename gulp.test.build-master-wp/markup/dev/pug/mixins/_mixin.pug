@@ -34,6 +34,18 @@ mixin retina(obj)
 		source(srcset='images/large-'+obj.imgName+'.jpg, images/large-'+obj.imgName+'-2x.jpg 2x, images/large-'+obj.imgName+'-3x.jpg 3x')
 		img(src='images/large-'+obj.imgName+'.jpg', alt= obj.alt || "image description")
 
+//- +retinaPng ({
+//-  imgName: 'img-01',
+//-  alt: 'logo'
+//- })
+
+mixin retinaPng(obj)
+	picture
+		source(srcset='images/small-'+obj.imgName+'.png, images/small-'+obj.imgName+'-2x.png 2x, images/small-'+obj.imgName+'-3x.png 3x', media='(max-width: 767px)')
+		source(srcset='images/medium-'+obj.imgName+'.png, images/medium-'+obj.imgName+'-2x.png 2x, images/medium-'+obj.imgName+'-3x.png 3x', media='(max-width: 1024px)')
+		source(srcset='images/large-'+obj.imgName+'.png, images/large-'+obj.imgName+'-2x.png 2x, images/large-'+obj.imgName+'-3x.png 3x')
+		img(src='images/large-'+obj.imgName+'.png', alt= obj.alt || "image description")
+
 //-
 	-for (var i = 0; i <= 20; i++)
 		tr
