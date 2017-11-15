@@ -1,26 +1,3 @@
-// #main {
-//  @extend %clearfix;
-// }
-
-#content {
-  @include media('≥tablet') {
-    float: left;
-    width: 70%;
-  }
-
-  &:only-child{
-    float:none;
-    width:100%;
-  }
-}
-
-#sidebar {
-  @include media('≥tablet') {
-    float: right;
-    width: 25%;
-  }
-}
-
 .widget {
   @extend %clearfix;
   margin-bottom: $widget-margin;
@@ -55,6 +32,14 @@
 
     &[type='submit'] {
       margin: 0;
+      padding: $submit-btn-padding;
+      color: $submit-btn-default-color;
+      font-size: $submit-btn-font-size-base;
+      font-weight: $submit-btn-font-weight;
+      line-height: $submit-btn-line-height;
+      border-radius: $submit-btn-border-radius;
+      border: $submit-btn-border-width solid $submit-btn-default-border;
+      background: $submit-btn-default-bg;
     }
   }
 }
@@ -77,11 +62,16 @@
 
   .next,
   .prev {
+    display: inline-block;
+    vertical-align: middle;
     max-width: 49%;
+    padding: $btn-padding;
     color: $btn-default-color;
+    font-size: $btn-font-size-base;
     font-weight: $btn-font-weight;
-    border-radius: $btn-border-radius-base;
-    border: 1px solid $btn-default-border;
+    line-height: $btn-line-height;
+    border-radius: $btn-border-radius;
+    border: $btn-border-width solid $btn-default-border;
     background: $btn-default-bg;
   }
 }
@@ -89,7 +79,8 @@
 .navigation-single {
   margin-bottom: $vertical-rhythm;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 
@@ -98,33 +89,18 @@
     max-width: 49%;
     display: flex;
     align-items: center;
-    color: $btn-default-color;
-    font-weight: $btn-font-weight;
-
 
     > a {
       display: flex;
-      color: inherit;
-      align-items: center;
-      border: 1px solid $btn-default-border;
-      border-radius: $btn-border-radius-base;
+      padding: $btn-padding;
+      color: $btn-default-color;
+      font-size: $btn-font-size-base;
+      font-weight: $btn-font-weight;
+      line-height: $btn-line-height;
+      border-radius: $btn-border-radius;
+      border: $btn-border-width solid $btn-default-border;
       background: $btn-default-bg;
     }
-  }
-}
-
-.navigation-single {
-  justify-content: space-between;
-  align-items: stretch;
-
-  .next,
-  .prev {
-    padding: 0;
-    margin: 0;
-    max-width: 49%;
-    display: flex;
-    align-items: center;
-    border: 0;
   }
 }
 
@@ -146,6 +122,14 @@
     &[type='submit'] {
       display: block;
       width: auto;
+      padding: $submit-btn-padding;
+      color: $submit-btn-default-color;
+      font-size: $submit-btn-font-size-base;
+      font-weight: $submit-btn-font-weight;
+      line-height: $submit-btn-line-height;
+      border-radius: $submit-btn-border-radius;
+      border: $submit-btn-border-width solid $submit-btn-default-border;
+      background: $submit-btn-default-bg;
     }
   }
 

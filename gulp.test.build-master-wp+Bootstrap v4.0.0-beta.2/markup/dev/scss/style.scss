@@ -41,6 +41,7 @@ $media-expressions: (
 // @import 'vendors/gravity-defoult/readyclass.min';
 
 @import 'base/variables';
+@import "vendors/bootstrap/scss/mixins";
 @import 'base/mixins';
 @import 'base/helpers';
 @import 'base/wp-reset';
