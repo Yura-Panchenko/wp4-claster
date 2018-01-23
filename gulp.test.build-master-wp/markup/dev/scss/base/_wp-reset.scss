@@ -8,9 +8,9 @@
     width: 70%;
   }
 
-  &:only-child{
-    float:none;
-    width:100%;
+  &:only-child {
+    float: none;
+    width: 100%;
   }
 }
 
@@ -27,12 +27,14 @@
 
   select {
     min-width: 150px;
+    width: 100%;
   }
 }
 
 .search-form,
 .post-password-form {
   @extend %clearfix;
+  margin-bottom: 10px;
 
   label {
     display: block;
@@ -64,7 +66,7 @@
 .navigation-comments {
   position: relative;
   vertical-align: middle;
-  margin: 0 -3px $vertical-rhythm;
+  margin: 0 0 $vertical-rhythm;
 
   .screen-reader-text {
     position: absolute;
@@ -73,12 +75,50 @@
 
   .page-numbers {
     margin: 0 3px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .next,
   .prev {
-    @extend .btn;
+    @include animate(background);
+    display: inline-block;
+    vertical-align: middle;
+    background: $btn-background;
+    color: $btn-color;
+    border: $btn-border;
+    padding: $btn-padding;
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
     max-width: 49%;
+
+    &:hover {
+      background: $btn-hover-background;
+      color: $btn-hover-color;
+    }
+
+    @include media('<tablet') {
+      font-size: 0;
+
+      &:after {
+        content: '»';
+        font-size: $btn-font-size;
+      }
+    }
+  }
+
+  .prev {
+    @include media('<tablet') {
+      &:after {
+        content: '«';
+      }
+    }
   }
 }
 
@@ -96,9 +136,33 @@
     align-items: center;
 
     a {
-      @extend .btn;
+      @include animate(background);
       display: block;
-      color: inherit;
+      background: $btn-background;
+      color: $btn-color;
+      border: $btn-border;
+      padding: $btn-padding;
+      font-size: $btn-font-size;
+      line-height: $btn-line-height;
+
+      @include media('<tablet') {
+        font-size: 0;
+
+        &:after {
+          content: '»';
+          font-size: $btn-font-size;
+        }
+      }
+    }
+  }
+
+  .prev {
+    a {
+      @include media('<tablet') {
+        &:after {
+          content: '«';
+        }
+      }
     }
   }
 }
@@ -255,8 +319,13 @@ img {
 }
 
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
   .gallery-item {
-    padding: 0 10px;
+    margin: 0;
+    padding: 0 10px 10px;
 
     dt {
       float: none;
@@ -264,5 +333,37 @@ img {
       margin: 0 0 10px;
       padding: 0;
     }
+  }
+}
+
+.gallery-columns-2 {
+  .gallery-item {
+    max-width: 50%;
+    width: 50%;
+  }
+}
+
+.gallery-columns-3 {
+  .gallery-item {
+    max-width: 33.33%;
+    width: 33.33%;
+  }
+}
+
+.tagcloud {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment-list {
+  .comment-body {
+    margin-bottom: 20px;
+  }
+}
+
+.comment-author {
+  img {
+    margin-right: 10px;
   }
 }

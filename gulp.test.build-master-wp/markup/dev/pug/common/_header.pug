@@ -2,14 +2,23 @@ header#header
 	.container
 		.logo: a(href="#")
 			img(src="images/logo.png" alt="LOGO" width="100" height="20")
-		nav#nav
+		nav#nav.main-navigation(role='navigation', aria-label='Primary Menu')
 			a(href="#").nav-opener: span Open
 			.nav-drop
-				//- - var curentClass = 'home' //- past in curent page
-				ul
-					li(class={active: curentClass === 'home'}): a(href="index.html") home
-					li(class={active: curentClass === 'about'}): a(href="about.html") about  us
-					li(class={active: curentClass === 'properties'}): a(href="properties.html") properties
-					li(class={active: curentClass === 'region'}): a(href="region.html") the region
-					li(class={active: curentClass === 'contact'}): a(href="contact.html") contact us
-
+				ul.primary-menu
+					li.menu-item.menu-item-type-post_type.menu-item-object-page
+						a(href='#') Page A
+					li.menu-item.menu-item-type-post_type.menu-item-object-page
+						a(href='#') Page B
+					li.menu-item.menu-item-type-post_type.menu-item-object-page
+						a(href='#') Front Page
+					li.menu-item.menu-item-type-post_type.menu-item-object-page
+						a(href='#') Page Markup And Formatting
+					li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-has-children
+						a(href='#') Level 1
+						ul.sub-menu.toggled-on
+							li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-has-children.current-menu-parent
+								a(href='#') Level 2
+								ul.sub-menu.toggled-on
+									li.menu-item.menu-item-type-post_type.menu-item-object-page.current-menu-item
+										a(href='#') Level 3a
