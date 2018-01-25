@@ -2,74 +2,14 @@
 // Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
 // Color names - http://name-of-color.com/
 
-// font weight
-// Fonts
-// Body
-// Paragraphs
-// Grid columns
-// Buttons
-// submit button
+$min-width-container:         320px;
+$max-width-container:         1200px;
 
-$black:                 #000;
-$white:                 #fff;
-$gray:                  #212529 !default;
-
-// font weight
-$font-thin:                   100;
-$font-light:                  300;
-$font-normal:                 400;
-$font-medium:                 500;
-$font-semibold:               600;
-$font-bold:                   700;
-$font-black:                  800;
-
+// wp-reset.scss - variables
 $widget-margin:               20px;
 $vertical-rhythm:             20px;
+$wp-caption-border:           $border-width solid $border-color;
 
-$wp-caption-border:           1px solid $black;
-
-// Fonts
-$font-family-sans-serif:       'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
-// $base-font-serif:             'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
-// $base-font:                   $base-font-sans-serif;
-
-$font-size-base:              1rem !default;
-$line-height-base:            1.2 !default;
-
-// $base-min-width:              320px;
-// $max-width-center-container:  1200px;
-
-$border-radius-base:          0;
-
-// Body
-$body-bg:                         $white !default;
-$body-color:                      $gray !default;
-
-// Paragraphs
-$paragraph-margin-bottom:         1rem !default;
-
-// Grid columns
-$grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
-
-// Buttons
-$btn-font-weight:                 normal !default;
-$btn-border-width:                1px !default;
-$btn-default-color:               #333 !default;
-$btn-default-bg:                  #fff !default;
-$btn-default-border:              #ccc !default;
-$btn-border-radius:               0 !default;
-$btn-padding:                     5px 10px !default;
-$btn-font-size-base:              14px !default;
-$btn-line-height:                 $btn-font-size-base + 4 !default;
-
-// submit button
-$submit-btn-padding:              $btn-padding !default;
-$submit-btn-default-color:        $btn-default-color !default;
-$submit-btn-font-size-base:       $btn-font-size-base !default;
-$submit-btn-font-weight:          $btn-font-weight !default;
-$submit-btn-line-height:          $btn-line-height !default;
-$submit-btn-border-radius:        $btn-border-radius !default;
-$submit-btn-border-width:         $btn-border-width !default;
-$submit-btn-default-border:       $btn-default-border !default;
-$submit-btn-default-bg:           $btn-default-bg !default;
+//form-style.scss - variables
+$input-font-family:           $font-family-base;
+$input-font-size:             $font-size-base;
