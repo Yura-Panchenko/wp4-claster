@@ -81,3 +81,17 @@ mixin imgMask(obj)
 			mask.mask(id=''+obj.idSvgMask, maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse', transform='scale(1)')
 				image(width='100%', height='100%', xlink:href='images/'+obj.mask)
 		image#the-mask(mask='url(#'+obj.idSvgMask+')', width='100%', height='100%', y='0', x='0', xlink:href='images/'+obj.imgName)
+
+//- +breadcrumbs1({
+//-   arr: [
+//-     'ocean1',
+//-     'conservation',
+//-     'trestles']
+//- })
+mixin breadcrumbs1(obj)
+	.breadcrumbs
+		ul.breadcrumbs-list
+			each txt, index in obj.arr
+				if (index < obj.arr.length - 1)
+					li: a(href='#')= txt
+			li: span(href='#')= obj.arr[obj.arr.length - 1]
