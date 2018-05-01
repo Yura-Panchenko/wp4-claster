@@ -3,3 +3,7 @@
   position: relative;
   overflow: hidden;
 }
+
+a[href*="mailto:"] {
+  word-wrap: break-word;
+}
