@@ -39,3 +39,7 @@ a {
     text-decoration: $text-decoration-hover;
   }
 }
+
+a[href*="mailto:"] {
+  word-wrap: break-word;
+}
