@@ -2,7 +2,7 @@
 //   @extend %clearfix;
 // }
 
-#content {
+[id='content'] {
   @include media('≥tablet') {
     float: left;
     width: 70%;
@@ -14,7 +14,7 @@
   }
 }
 
-#sidebar {
+[id='sidebar'] {
   @include media('≥tablet') {
     float: right;
     width: 25%;
@@ -48,7 +48,7 @@
     float: left;
     margin-right: 5px;
 
-    #sidebar & {
+    [id="sidebar"] & {
       @include media('≥tablet') {
         width: 100%;
         margin: 0 0 5px;
@@ -125,15 +125,19 @@
 .navigation-single {
   margin-bottom: $vertical-rhythm;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
 
   .next,
   .prev {
     max-width: 49%;
     display: flex;
+    padding: 0;
+    margin: 0;
     align-items: center;
+    border: 0;
 
     a {
       @include animate(background);
@@ -163,26 +167,6 @@
           content: '«';
         }
       }
-    }
-  }
-}
-
-.navigation-single {
-  justify-content: space-between;
-  align-items: stretch;
-
-  .next,
-  .prev {
-    padding: 0;
-    margin: 0;
-    max-width: 49%;
-    display: flex;
-    align-items: center;
-    border: 0;
-
-    a {
-      padding: $btn-padding;
-      border: $btn-border;
     }
   }
 }
