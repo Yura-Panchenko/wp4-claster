@@ -23,7 +23,7 @@
     float: left;
     margin-right: 5px;
 
-    #sidebar & {
+    [id='sidebar'] & {
       @include media('≥tablet') {
         width: 100%;
         margin: 0 0 5px;
