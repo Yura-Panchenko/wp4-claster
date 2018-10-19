@@ -2,7 +2,7 @@
 //  @extend %clearfix;
 // }
 
-#content {
+[id='content'] {
   @include media('≥tablet') {
     float: left;
     width: 70%;
@@ -14,7 +14,7 @@
   }
 }
 
-#sidebar {
+[id='sidebar'] {
   @include media('≥tablet') {
     float: right;
     width: 25%;
@@ -46,7 +46,7 @@
     float: left;
     margin-right: 5px;
 
-    #sidebar & {
+    [id='sidebar'] & {
       @include media('≥tablet') {
         width: 100%;
         margin: 0 0 5px;
@@ -84,36 +84,54 @@
 .navigation-single {
   margin-bottom: $vertical-rhythm;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   width: 100%;
-
-  .next,
-  .prev {
-    max-width: 49%;
-    display: flex;
-    align-items: center;
-
-    > a {
-      display: flex;
-      color: inherit;
-      align-items: center;
-    }
-  }
-}
-
-.navigation-single {
   justify-content: space-between;
   align-items: stretch;
 
   .next,
   .prev {
-    padding: 0;
-    margin: 0;
     max-width: 49%;
     display: flex;
+    padding: 0;
+    margin: 0;
     align-items: center;
     border: 0;
+
+    &:only-child {
+      max-width: 100%;
+    }
+
+    a {
+      @include animate(background);
+      display: block;
+      background: $btn-background;
+      color: $btn-color;
+      border: $btn-border;
+      padding: $btn-padding;
+      font-size: $btn-font-size;
+      line-height: $btn-line-height;
+
+
+      @include media('<tablet') {
+        font-size: 0;
+
+        &:after {
+          content: '»';
+          font-size: $btn-font-size;
+        }
+      }
+    }
+  }
+
+  .prev {
+    a {
+      @include media('<tablet') {
+        &:after {
+          content: '«';
+        }
+      }
+    }
   }
 }
 
