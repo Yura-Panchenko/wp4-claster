@@ -88,7 +88,14 @@
   .prev {
     max-width: 49%;
     display: flex;
+    padding: 0;
+    margin: 0;
+    border: 0;
     align-items: center;
+    
+    &:only-child {
+      max-width: 100%;
+    }
 
     > a {
       display: flex;
@@ -100,6 +107,25 @@
       border-radius: $btn-border-radius;
       border: $btn-border-width solid $btn-default-border;
       background: $btn-default-bg;
+      
+      @include media('<tablet') {
+        font-size: 0;
+
+        &:after {
+          content: '»';
+          font-size: $btn-font-size-base;
+        }
+      }
+    }
+  }
+  
+  .prev {
+    a {
+      @include media('<tablet') {
+        &:after {
+          content: '«';
+        }
+      }
     }
   }
 }
