@@ -23,6 +23,7 @@ textarea {
   box-sizing: border-box;
   border: $input-border;
   border-radius: $input-border-radius;
+  color: $input-color;
 
   &:not(textarea) {
     height: $input-height;
